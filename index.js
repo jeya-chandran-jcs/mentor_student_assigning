@@ -114,7 +114,7 @@ app.get("/assignOneMentor",async(req,res)=>{
             $unwind:"$assignOne"
         },{
             $group:{
-                _id:"$assignOne.",
+                _id:"$assignOne.mentorID",
                 student:{$first:"$name"},
                 mentor:{$first:"$assignOne.name"}
             }
